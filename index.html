@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudyMate - Learn Smarter</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            color: #172554;
+        }
+
+        header {
+            background: #172554;
+            color: white;
+            padding: 22px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h2 {
+            color: #60a5fa;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 75px 20px;
+            background: linear-gradient(135deg, #172554, #2563eb);
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 17px;
+            margin-bottom: 25px;
+        }
+
+        .hero button {
+            padding: 13px 25px;
+            background: white;
+            color: #172554;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .container {
+            padding: 45px 8%;
+        }
+
+        .container h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 28px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 3px 15px #00000012;
+        }
+
+        .card h3 {
+            margin: 12px 0;
+            color: #2563eb;
+        }
+
+        .card p {
+            color: #64748b;
+            margin-bottom: 18px;
+        }
+
+        .card button {
+            background: #2563eb;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        footer {
+            background: #172554;
+            color: white;
+            text-align: center;
+            padding: 22px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h2>StudyMate</h2>
+    <span>Learn | Practice | Grow</span>
+</header>
+
+<section class="hero">
+    <h1>Welcome to StudyMate</h1>
+    <p>Your smart learning partner. Study better, achieve more!</p>
+    <button onclick="startLearning()">Start Learning</button>
+</section>
+
+<section class="container">
+    <h2>Explore Your Learning</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>📚 Study Notes</h3>
+            <p>Access your study materials.</p>
+            <button onclick="showMessage('Study Notes')">Explore</button>
+        </div>
+
+        <div class="card">
+            <h3>📝 Online Tests</h3>
+            <p>Practice your knowledge.</p>
+            <button onclick="showMessage('Online Tests')">Start Test</button>
+        </div>
+
+        <div class="card">
+            <h3>📖 Previous Papers</h3>
+            <p>Prepare with previous year questions.</p>
+            <button onclick="showMessage('Previous Papers')">Explore</button>
+        </div>
+
+        <div class="card">
+            <h3>🎯 Skill Learning</h3>
+            <p>Learn new skills and improve yourself.</p>
+            <button onclick="showMessage('Skill Learning')">Explore</button>
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 StudyMate | Made for Students</p>
+</footer>
+
+<script>
+    function startLearning() {
+        document.querySelector(".container").scrollIntoView({
+            behavior: "smooth"
+        });
+    }
+
+    function showMessage(section) {
+        alert(section + " section is coming soon!");
+    }
+</script>
+
+</body>
+</html>
