@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -640,3 +641,212 @@ document.getElementById("nextBtn").onclick = nextQuestion;
 
 </body>
 </html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>StudyMate - Student Learning</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f7fb;
+  color: #172554;
+}
+header {
+  background: #172554;
+  color: white;
+  padding: 22px;
+  text-align: center;
+}
+header h2 { color: #60a5fa; }
+.hero {
+  background: linear-gradient(135deg,#172554,#2563eb);
+  color: white;
+  text-align: center;
+  padding: 55px 15px;
+}
+.hero h1 { margin-bottom: 12px; }
+.container {
+  max-width: 950px;
+  margin: auto;
+  padding: 35px 18px;
+}
+.container h2 {
+  text-align: center;
+  margin-bottom: 25px;
+}
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(210px,1fr));
+  gap: 18px;
+}
+.card {
+  background: white;
+  padding: 25px;
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: 0 3px 12px #00000012;
+}
+.card h3 {
+  margin: 12px 0;
+  color: #2563eb;
+}
+button {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 11px 20px;
+  border-radius: 7px;
+  cursor: pointer;
+  margin-top: 12px;
+}
+button:hover { background: #1d4ed8; }
+#notes {
+  display: none;
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  margin-top: 25px;
+  line-height: 1.8;
+}
+#notes h2 { color: #2563eb; }
+#notes h3 { margin-top: 18px; }
+footer {
+  background: #172554;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 30px;
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h2>📚 StudyMate</h2>
+  <p>Learn | Practice | Grow</p>
+</header>
+
+<section class="hero">
+  <h1>Welcome to StudyMate</h1>
+  <p>Your smart learning partner!</p>
+</section>
+
+<main class="container">
+  <div id="home">
+    <h2>Choose Your Subject</h2>
+    <div class="cards">
+
+      <div class="card">
+        <h1>📐</h1>
+        <h3>Mathematics</h3>
+        <p>Learn Maths concepts.</p>
+        <button onclick="openNotes('math')">Open Notes</button>
+      </div>
+
+      <div class="card">
+        <h1>⚡</h1>
+        <h3>Physics</h3>
+        <p>Learn Physics concepts.</p>
+        <button onclick="openNotes('physics')">Open Notes</button>
+      </div>
+
+      <div class="card">
+        <h1>🔌</h1>
+        <h3>Electronics</h3>
+        <p>Learn Electronics concepts.</p>
+        <button onclick="openNotes('electronics')">Open Notes</button>
+      </div>
+
+      <div class="card">
+        <h1>💻</h1>
+        <h3>Programming</h3>
+        <p>Start coding from zero.</p>
+        <button onclick="openNotes('programming')">Open Notes</button>
+      </div>
+
+    </div>
+  </div>
+
+  <div id="notes">
+    <h2 id="noteTitle"></h2>
+    <div id="noteContent"></div>
+    <button onclick="goHome()">← Back to Subjects</button>
+  </div>
+</main>
+
+<footer>
+  <p>© 2026 StudyMate | Made for Students</p>
+</footer>
+
+<script>
+const subjects = {
+  math: {
+    title: "Mathematics Notes",
+    content: `
+      <h3>Topic: Matrices</h3>
+      <p>A matrix is a rectangular arrangement of numbers in rows and columns.</p>
+      <h3>Order of Matrix</h3>
+      <p>Order = Number of rows × Number of columns.</p>
+      <h3>Example</h3>
+      <p>A matrix with 2 rows and 3 columns has order 2 × 3.</p>
+    `
+  },
+  physics: {
+    title: "Physics Notes",
+    content: `
+      <h3>Topic: Newton's First Law</h3>
+      <p>An object remains at rest or in uniform motion unless acted upon by an external force.</p>
+      <h3>Example</h3>
+      <p>A book resting on a table stays at rest until a force moves it.</p>
+    `
+  },
+  electronics: {
+    title: "Electronics Notes",
+    content: `
+      <h3>Topic: PN Junction Diode</h3>
+      <p>A PN junction diode is made by joining P-type and N-type semiconductor materials.</p>
+      <h3>Uses</h3>
+      <p>It is commonly used for rectification in electronic circuits.</p>
+    `
+  },
+  programming: {
+    title: "Programming Notes",
+    content: `
+      <h3>Topic: HTML</h3>
+      <p>HTML stands for HyperText Markup Language.</p>
+      <h3>Use</h3>
+      <p>HTML is used to create the structure of web pages.</p>
+      <h3>Example</h3>
+      <p>&lt;h1&gt;Hello World&lt;/h1&gt;</p>
+    `
+  }
+};
+
+function openNotes(subject) {
+  document.getElementById("home").style.display = "none";
+  document.getElementById("notes").style.display = "block";
+  document.getElementById("noteTitle").textContent =
+    subjects[subject].title;
+  document.getElementById("noteContent").innerHTML =
+    subjects[subject].content;
+  window.scrollTo(0, 0);
+}
+
+function goHome() {
+  document.getElementById("notes").style.display = "none";
+  document.getElementById("home").style.display = "block";
+  window.scrollTo(0, 0);
+}
+</script>
+
+</body>
+</html>
+>>>>>>> cff108143777e55f8ab7bec999162d5fcbf8f1c6
